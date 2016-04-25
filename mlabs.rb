@@ -30,3 +30,8 @@ begin
         #puts data_row
         data.insert_one(data_row)
     end
+    puts "Enter the ID:"
+    client[:health].find().each do |document|
+        puts "Query1:"
+        puts document.to_s
+    end
