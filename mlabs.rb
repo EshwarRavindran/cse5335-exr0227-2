@@ -1,4 +1,4 @@
-#require 'rubygems'
+require 'rubygems'
 require 'mongo'
 require 'csv'
 require 'json'
@@ -31,8 +31,19 @@ begin
         data.insert_one(data_row)
     end
     puts "Enter the ID:"
-    client[:health].find().each do |document|
+    id = gets
+    #id = id.to_a
+    client[:health].find(:id => id.to_i).each do |document|
         puts "Query1:"
         puts document.to_s
+        
     end
+    puts "Query2:"
+    puts "Enter the AGE:"
+    id = gets
+    client[:health].find(:age => id.to_i).each do |document|
+        
+        puts document.to_s
+    end
+    puts"DONE"
 end
