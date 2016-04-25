@@ -31,19 +31,12 @@ begin
         data.insert_one(data_row)
     end
     puts "Enter the ID:"
-    id = gets
+    #id = gets
     #id = id.to_a
-    client[:health].find(:id => id.to_i).each do |document|
+    client[:health].find().each do |document|
         puts "Query1:"
         puts document.to_s
         
     end
-    puts "Query2:"
-    puts "Enter the AGE:"
-    id = gets
-    client[:health].find(:age => id.to_i).each do |document|
-        
-        puts document.to_s
-    end
-    puts"DONE"
+    
 end
