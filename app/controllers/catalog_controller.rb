@@ -16,7 +16,7 @@ class CatalogController < ApplicationController
          puts "Connected"
          
          
-         id = gets
+         #id = gets
          #id = id.to_a
          client[:health].find(:id => id.to_i).each do |row|
              puts "Query1:"
