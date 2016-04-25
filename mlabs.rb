@@ -33,7 +33,7 @@ begin
     puts "Enter the ID:"
     #id = gets
     #id = id.to_a
-    client[:health].find({},{"age":1}).each do |document|
+    client[:health].find({},{age:1,_id:0,sex:0}).each do |document|
         puts "Query1:"
         puts document.to_s
         
