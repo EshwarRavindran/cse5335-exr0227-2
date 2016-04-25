@@ -1,4 +1,4 @@
-require 'rubygems'
+#require 'rubygems'
 require 'mongo'
 require 'csv'
 require 'json'
