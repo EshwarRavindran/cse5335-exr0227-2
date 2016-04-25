@@ -35,3 +35,4 @@ begin
         puts "Query1:"
         puts document.to_s
     end
+end
