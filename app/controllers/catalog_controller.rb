@@ -2,7 +2,7 @@ class CatalogController < ApplicationController
 
   # GET /welcome
   def view
-     i = params[:id]
+     id = params[:id]
      
      require 'rubygems'
      require 'mongo'
@@ -15,27 +15,13 @@ class CatalogController < ApplicationController
          client = Mongo::Client.new([ 'ds019471.mlab.com:19471' ], :database => 'heroku_cbfd30fr', :user => 'testdb', :password => '02021993')
          puts "Connected"
          
-         v = con.exec("SELECT AGE,SEX,RACE, LENGTH_OF_STAY, STAY_INDICATOR, TOTAL_CHARGES, ID from health where ID = '%d'" % [i])
          
-         puts "QUERY 1"
-         
-         v.each do |row|
-             puts "%s %s %s %s %s %s %s" % [ row['age'], row['sex'], row['race'], row['length_of_stay'], row['stay_indicator'], row['total_charges'], row['id'] ]
+         id = gets
+         #id = id.to_a
+         client[:health].find(:id => id.to_i).each do |row|
+             puts "Query1:"
+             puts "%s %s %s %s %s %s %s" % [ row['age'].to_s, row['sex'].to_s, row['race'].to_s, row['length_of_stay'].to_s, row['stay_indicator'].to_s, row['total_charges'].to_s, row['id'].to_s ]
              
-             render :json => row
-
          end
-
-         rescue PG::Error => e
-         
-         puts e.message
-         
-         ensure
-         
-         con.close if con
-         
-     end
-     #render :json => "Welcome to UTA"
-  end
 
 end
