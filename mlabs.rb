@@ -33,9 +33,9 @@ begin
     puts "Enter the ID:"
     #id = gets
     #id = id.to_a
-    client[:health].find({},{age:1,_id:0,sex:0}).each do |document|
+    client[:health].find().each do |document|
         puts "Query1:"
-        puts document.to_s
+        puts "%s %s %s %s %s %s %s" % [ row['age'].to_s, row['sex'].to_s, row['race'].to_s, row['length_of_stay'].to_s, row['stay_indicator'].to_s, row['total_charges'].to_s, row['id'].to_s ]
         
     end
     
