@@ -18,9 +18,9 @@ class CatalogController < ApplicationController
          
          #id = gets
          #id = id.to_a
-         client[:health].find(:id => id.to_i).each do |row|
+         client[:climate].find(:id => id.to_i).each do |row|
              puts "Query1:"
-             puts "%s %s %s %s %s %s %s" % [ row['age'].to_s, row['sex'].to_s, row['race'].to_s, row['length_of_stay'].to_s, row['stay_indicator'].to_s, row['total_charges'].to_s, row['id'].to_s ]
+             puts "%s %s %s %s %s %s %s" % [ row['latitude'].to_s, row['longitude'].to_s, row['depth'].to_s, row['mag'].to_s, row['nst'].to_s, row['gap'].to_s, row['id'].to_s ]
              render :json => row
          end
      end
