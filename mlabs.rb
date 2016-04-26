@@ -22,8 +22,8 @@ begin
     #puts transformed_data
     puts "file transformed"
     #puts transformed_data
-    health.drop
-    data = client[:health, :capped => false, :size => 2048]
+    #health.drop
+    data = client[:climate, :capped => false, :size => 2048]
     data.create
     puts "Collection Created"
     transformed_data.each do |data_row|
@@ -34,7 +34,7 @@ begin
     #id = gets
     #id = id.to_a
     
-    client[:health].find().each do |row|
+    client[:climate].find().each do |row|
         puts "Query1:"
         puts "%s %s %s %s %s %s %s" % [ row['latitude'].to_s, row['longitude'].to_s, row['depth'].to_s, row['mag'].to_s, row['nst'].to_s, row['gap'].to_s, row['id'].to_s ]
         
