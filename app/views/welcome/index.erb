@@ -17,7 +17,7 @@
 
     .highlight.ng-enter, .highlight.ng-leave {
       transition:0.5s linear all;
-      background-color: red;
+      background-color: blue;
     }
 
 /* The finishing CSS styles for the enter animation */
@@ -44,11 +44,10 @@
               $scope.convert = data;
               console.log($scope.convert)
               
-              //$scope.items.push($scope.convert);
-              //id++;
+              
               if ($scope.items.length > 19)
               {
-                ///$scope.items.shift();
+               
                 $scope.items.splice(data, 1);
                 $timeout(function(){
                   $scope.items.push($scope.convert);
@@ -85,9 +84,7 @@
           <th>GAP</th>
           <th>ID</th>
           </tr>
-          <!-- <tr ng-repeat="item in items">
-            <td ng-repeat="(key, val) in item track by $index">{{key}}:{{val}}</td>
-          </tr> -->
+         
           <tr class="highlight" ng-repeat="item in items track by $index"> 
           <td>{{ item["latitude"]}}</td>
 
