@@ -23,6 +23,13 @@ class CatalogController < ApplicationController
              puts "%s %s %s %s %s %s %s" % [ row['age'].to_s, row['sex'].to_s, row['race'].to_s, row['length_of_stay'].to_s, row['stay_indicator'].to_s, row['total_charges'].to_s, row['id'].to_s ]
              render :json => row
          end
+         rescue mongo::Error => e
+         
+         puts e.message
+         
+         ensure
+         
+         con.close if con
      end
      
   end
