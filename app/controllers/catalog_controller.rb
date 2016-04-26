@@ -29,7 +29,7 @@ class CatalogController < ApplicationController
          
          ensure
          
-         con.close if con
+         client.close if client
 
      end
      
