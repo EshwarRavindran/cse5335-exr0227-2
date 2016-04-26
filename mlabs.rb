@@ -17,26 +17,26 @@ begin
     #data = CSV.read('6339_Dataset_1.csv')
     #CSV.parse(data).to_json
     
-#    extracted_data   = CSV.table('6339_Dataset_1.csv')
-#    transformed_data = extracted_data.map { |row| row.to_hash }
-#    #puts transformed_data
-#    puts "file transformed"
-#    #puts transformed_data
-#    #health.drop
-#    data = client[:health, :capped => false, :size => 2048]
-#    data.create
-#    puts "Collection Created"
-#    transformed_data.each do |data_row|
-#        #puts data_row
-#        data.insert_one(data_row)
-#    end
+    extracted_data   = CSV.table('all_month.csv')
+    transformed_data = extracted_data.map { |row| row.to_hash }
+    #puts transformed_data
+    puts "file transformed"
+    #puts transformed_data
+    health.drop
+    data = client[:health, :capped => false, :size => 2048]
+    data.create
+    puts "Collection Created"
+    transformed_data.each do |data_row|
+        #puts data_row
+        data.insert_one(data_row)
+    end
     puts "Enter the ID:"
     #id = gets
     #id = id.to_a
     
     client[:health].find().each do |row|
         puts "Query1:"
-        puts "%s %s %s %s %s %s %s" % [ row['age'].to_s, row['sex'].to_s, row['race'].to_s, row['length_of_stay'].to_s, row['stay_indicator'].to_s, row['total_charges'].to_s, row['id'].to_s ]
+        puts "%s %s %s %s %s %s %s" % [ row['latitude'].to_s, row['longitude'].to_s, row['depth'].to_s, row['mag'].to_s, row['nst'].to_s, row['gap'].to_s, row['id'].to_s ]
         
         
     end
