@@ -24,10 +24,7 @@ class CatalogController < ApplicationController
              render :json => row
          end
 
-         
-         ensure
-         
-         con.close if con
+
      end
      
   end
