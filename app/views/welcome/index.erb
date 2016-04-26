@@ -52,7 +52,7 @@
                 $timeout(function(){
                   $scope.items.push($scope.convert);
                   id++;
-                });
+                },10);
                 
               }
               else
@@ -62,7 +62,7 @@
               }
 
           });
-        },500);
+        },400);
       
   
       }]);
