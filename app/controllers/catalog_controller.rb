@@ -24,5 +24,8 @@ class CatalogController < ApplicationController
              render :json => row
          end
      end
-    
+     #render :json => "Welcome to UTA"
+  end
+  
 end
+   
