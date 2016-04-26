@@ -52,7 +52,7 @@
                 $timeout(function(){
                   $scope.items.push($scope.convert);
                   id++;
-                },10);
+                },5);
                 
               }
               else
@@ -77,18 +77,11 @@
         <table> 
           <tr>
           <th>LATITUDE</th>
-          
-          
           <th>ID</th>
           </tr>
          
           <tr class="highlight" ng-repeat="item in items track by $index"> 
           <td>{{ item["age"]}}</td>
-
-
-          
-          
-          
           <td>{{ item["id"]}}</td>
   
           </tr>
