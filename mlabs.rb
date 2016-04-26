@@ -31,9 +31,9 @@ begin
         data.insert_one(data_row)
     end
     puts "Enter the ID:"
-    id = gets
-    id = id.to_a
-    
+#    id = gets
+#    id = id.to_a
+
     client[:data].find().each do |row|
         puts "Query1:"
         puts "%s %s %s %s %s %s %s" % [ row['latitude'].to_s, row['longitude'].to_s, row['depth'].to_s, row['mag'].to_s, row['nst'].to_s, row['gap'].to_s, row['id'].to_s ]
