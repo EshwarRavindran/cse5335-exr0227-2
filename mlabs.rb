@@ -33,11 +33,11 @@ begin
     puts "Enter the ID:"
     #id = gets
     #id = id.to_a
-    inp=1
-    client[:health].find(:id => inp.to_i).each do |row|
+    
+    client[:health].find().each do |row|
         puts "Query1:"
         puts "%s %s %s %s %s %s %s" % [ row['age'].to_s, row['sex'].to_s, row['race'].to_s, row['length_of_stay'].to_s, row['stay_indicator'].to_s, row['total_charges'].to_s, row['id'].to_s ]
-        inp=inp+1
+        
         
     end
     
