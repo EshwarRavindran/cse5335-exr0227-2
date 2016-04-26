@@ -17,7 +17,7 @@ begin
     #data = CSV.read('6339_Dataset_1.csv')
     #CSV.parse(data).to_json
     
-    extracted_data   = CSV.table('all_month.csv')
+    extracted_data   = CSV.table('6339_Dataset_1.csv')
     transformed_data = extracted_data.map { |row| row.to_hash }
     #puts transformed_data
     puts "file transformed"
