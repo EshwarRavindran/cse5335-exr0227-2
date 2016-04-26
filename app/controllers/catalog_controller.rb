@@ -12,7 +12,7 @@ class CatalogController < ApplicationController
          #client = Mongo::Client.new([ 'localhost:27017' ], :database => 'music')
          #mongo_client = Mongo::Client.new(['localhost'], 27017)
          #db = Mongo::Client.new(["mongo ds031912.mongolab.com:31912"]).db("heroku_mhz4f7bj")
-         client = Mongo::Client.new([ 'ds019471.mlab.com:19471' ], :database => 'heroku_cbfd30fr', :user => 'testdb', :password => '02021993')
+         client = Mongo::Client.new([ 'ds021741.mlab.com:21741' ], :database => 'heroku_n1l9hzqv', :user => 'testdb', :password => '02021993')
          puts "Connected"
          
          
@@ -20,7 +20,7 @@ class CatalogController < ApplicationController
          #id = id.to_a
          client[:dat].find(:id => id.to_i).each do |row|
              puts "Query1:"
-             puts "%s %s %s %s %s %s %s" % [ row['latitude'].to_s, row['longitude'].to_s, row['depth'].to_s, row['mag'].to_s, row['nst'].to_s, row['gap'].to_s, row['id'].to_s ]
+             puts "%s %s %s %s %s %s %s" % [ row['age'].to_s, row['sex'].to_s, row['race'].to_s, row['length_of_stay'].to_s, row['stay_indicator'].to_s, row['total_charges'].to_s, row['id'].to_s ]
              render :json => row
          end
      end
