@@ -18,7 +18,7 @@ class CatalogController < ApplicationController
          
          #id = gets
          #id = id.to_a
-         client[:climate].find(:id => id.to_i).each do |row|
+         client[:dat].find(:id => id.to_i).each do |row|
              puts "Query1:"
              puts "%s %s %s %s %s %s %s" % [ row['latitude'].to_s, row['longitude'].to_s, row['depth'].to_s, row['mag'].to_s, row['nst'].to_s, row['gap'].to_s, row['id'].to_s ]
              render :json => row
